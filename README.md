@@ -1,15 +1,8 @@
 glad
 ====
 
-Vulkan/GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specifications
+Vulkan/GL/GLES/EGL/GLX/WGL loader generator based on the official specifications
 for multiple languages.
-
-Check out the [webservice for glad2](https://glad.sh) to generate the files you need!
-
-
-**NOTE:** This is the 2.0 branch, which adds more functionality but changes the API.
-
-Some languages are only available in the [glad1 generator](https://glad.dav1d.de).
 
 ## Examples
 
