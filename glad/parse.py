@@ -950,8 +950,12 @@ class FuncPointerType(Type):
         if proto_element is not None:
             # New structured format (VulkanBase era): <proto> and <param> children,
             # analogous to <command> elements.
-            type_elem = proto_element.find('type')
-            ret = type_elem.text.strip() if type_elem is not None else 'void'
+            ptype_parts = [proto_element.text or '']
+            for child in proto_element:
+                if child.tag == 'name':
+                    break  # name is always last; stop here
+                ptype_parts.append((child.text or '') + (child.tail or ''))
+            ret = ''.join(ptype_parts).strip()
 
             parameters = []
             for param_elem in element.findall('param'):
